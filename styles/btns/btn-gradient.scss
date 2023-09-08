@@ -1,0 +1,81 @@
+.btn-gradient {
+  background: linear-gradient(135deg, rgb(112, 101, 230), rgb(122, 122, 192));
+  background: linear-gradient(135deg, #da96e2 0%, #84648e 100%);
+  // background: linear-gradient(135deg, #38dfc3 0%, #588d92 100%);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+
+  box-shadow:   0px 0px 20px rgba(207, 142, 239, 0.35),
+                    0px 0px 16px rgba(207, 142, 239, 0.2), 
+                    0px 0px 8px rgba(207, 142, 239, 0.15);
+
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  &.inProgress {
+    animation: gradient-animate 3s linear infinite;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+  &.w100 {
+    width: 100%;
+  }
+
+  &.default {
+    color: #000;
+    background: linear-gradient(135deg, rgb(181, 239, 142), rgb(93, 195, 149));
+    box-shadow:   0px 0px 20px rgba(181, 239, 142, 0.35),
+                    0px 0px 16px rgba(181, 239, 142, 0.2), 
+                    0px 0px 8px rgba(181, 239, 142, 0.15);
+  }
+  &.green {
+  // background: linear-gradient(135deg, #10ff9b 0%, #14ab6c 100%);
+  background: linear-gradient(135deg, rgb(181, 239, 142), rgb(93, 195, 149));
+    color: #000;
+    // prettier-ignore
+    box-shadow:   0px 0px 20px rgba(117, 242, 33, 0.35),
+                    0px 0px 16px rgba(117, 242, 33, 0.2), 
+                    0px 0px 8px rgba(117, 242, 33, 0.15);
+  }
+
+  &.blue {
+  background: linear-gradient(135deg, #388fdf 0%, #355aaf 100%);
+    // color: #000;
+    // prettier-ignore
+    box-shadow:   0px 0px 20px #388fdf44,
+                    0px 0px 16px #388fdf33, 
+                    0px 0px 8px #388fdf22;
+  }
+
+  &.cyan {
+  background: linear-gradient(135deg, #38dfc3 0%, #588d92 100%);
+    color: #000;
+    // prettier-ignore
+    box-shadow:   0px 0px 20px #38dfc344,
+                    0px 0px 16px #38dfc333, 
+                    0px 0px 8px #38dfc322;
+  }
+
+  &.orange {
+    background: linear-gradient(45deg, #f0892a 0%, #ad611b 100%);
+    
+    // prettier-ignore
+    box-shadow:   0px 0px 20px #F0892A60,
+                    0px 0px 16px #F0892A40, 
+                    0px 0px 8px #F0892A20;
+  }
+
+  &.yellow {
+    background: linear-gradient(45deg, #eff15f 0%, #b1b33e 100%);
+    color: #000;
+    
+    // prettier-ignore
+    box-shadow:   0px 0px 20px #eff15f60,
+                    0px 0px 16px #eff15f40, 
+                    0px 0px 8px #eff15f20;
+  }
+}

@@ -1,0 +1,9 @@
+@import "./gradient-blur.scss";
+@import "./container.scss";
+// @import "./preloader.scss";
+
+
+@mixin set-general-theme($theme, $values) {
+    @include set-gradient-transparent($theme, $values);
+    @include set-container-theme($theme, $values);
+}

@@ -1,0 +1,43 @@
+.btn-dropdown-before {
+    cursor: pointer;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: linear-gradient(rgb(207, 142, 239), rgb(137, 93, 195));
+        box-shadow: 0 0 6px rgb(207, 142, 239);
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &.green::before {
+        background: linear-gradient(135deg,#a6dd88 0%, #3fd064 100%);
+        box-shadow: 0 0 6px #a6dd8899;
+    }
+    &.blue::before {
+        background: linear-gradient(#388fdf 0%, #355aaf 100%);
+        box-shadow: 0 0 6px #388fdf99;
+    }
+    &.cyan::before {
+        background: linear-gradient(#38dfcc 0%, #38dfb8 100%);
+        box-shadow: 0 0 6px #38dfcc99;
+    }
+    &.yellow::before {
+        background: linear-gradient(#f0d62a 0%, #ada81b 100%);
+        box-shadow: 0 0 6px #f0ed2a99;
+    }
+    &.orange::before {
+        background: linear-gradient(#f0892a 0%, #ad611b 100%);
+        box-shadow: 0 0 6px #f0892a99;
+    }
+    &.red::before {
+        background: linear-gradient(#f22872 0%, #b21f55 100%);
+        box-shadow: 0 0 6px #f2287299;
+    }
+    &.black::before {
+        background: linear-gradient(#686868 0%, #444444 100%);
+        box-shadow: 0 0 6px #71717199;
+    }
+}

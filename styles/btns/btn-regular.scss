@@ -1,0 +1,54 @@
+.btn-regular {
+  background: transparent;
+  color: #0009;
+  border: 1px solid rgba(65, 91, 133, 0.2);
+
+  font-weight: 600;
+  border-radius: 8px;
+
+  &.disabled {
+    opacity: .6;
+    cursor: default;
+  }
+  &:hover {
+    // transform: scale(1.05);
+    background: rgba(154, 165, 217, 0.08);
+  }
+  &.inProgress {
+    animation: gradient-animate 3s linear infinite;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+  &.w100 {
+    width: 100%;
+  }
+
+  &.green {
+  background: linear-gradient(135deg, #10ff9b 0%, #14ab6c 100%);
+    color: #000;
+    // prettier-ignore
+    box-shadow:   0px 0px 20px rgba(16, 255, 155, 0.35),
+                    0px 0px 16px rgba(16, 255, 155, 0.2), 
+                    0px 0px 8px rgba(16, 255, 155, 0.15);
+  }
+
+  &.blue {
+  background: linear-gradient(135deg, #388fdf 0%, #355aaf 100%);
+    // color: #000;
+    // prettier-ignore
+    box-shadow:   0px 0px 20px #388fdf44,
+                    0px 0px 16px #388fdf33, 
+                    0px 0px 8px #388fdf22;
+  }
+
+  &.orange {
+    background: linear-gradient(45deg, #f0892a 0%, #ad611b 100%);
+    
+    // prettier-ignore
+    box-shadow:   0px 0px 20px #F0892A60,
+                    0px 0px 16px #F0892A40, 
+                    0px 0px 8px #F0892A20;
+  }
+}

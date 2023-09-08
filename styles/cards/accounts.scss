@@ -1,0 +1,27 @@
+.row-wrapper.accounts {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    gap: 1.5rem;
+    padding-top: 1rem;
+    // padding-bottom: 1rem;
+    
+}
+
+
+.row.account {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1rem;
+    /* border: 1px dashed black; */
+    /* padding: 0.5rem 0; */
+}
+.row-wrapper.account {
+    display: flex;
+    flex: 1;
+    min-width: 140px;
+}
+.row-wrapper.account .input-wrapper {
+    width: 100%;
+}

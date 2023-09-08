@@ -1,0 +1,25 @@
+.input-wrapper {
+  .input-label {
+    position: absolute;
+    left: 0.5rem;
+    top: -1.5rem;
+    font-size: 0.8rem;
+    color: #0009;
+  }
+
+  input {
+    background-color: #fbfbfb;
+    border-radius: 8px;
+    border: 1px solid #0002;
+    width: 100%;
+    box-shadow: none;
+
+    &:disabled {
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+.select-wrapper {
+    background: #fDFDFD;
+}

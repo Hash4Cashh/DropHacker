@@ -1,0 +1,75 @@
+.btn-text {
+  font-weight: 700;
+  background: linear-gradient(135deg, rgb(168, 142, 239), rgb(113, 93, 195));
+  color: rgb(113, 93, 195);
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: block;
+  transition: all 0.4s;
+
+  &.default {
+    color: #000;
+  }
+
+  &.white {
+    color: #fff;
+  }
+
+  &.black {
+    background: linear-gradient(135deg, rgb(30, 213, 165), rgb(14, 101, 233));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: #474747;
+  }
+  &.green {
+    background: linear-gradient(135deg, rgb(30, 213, 165), rgb(14, 101, 233));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgb(93, 195, 129);
+  }
+  &.blue {
+    background: linear-gradient(
+      135deg,
+      #388fdf 0%,
+      #355aaf 100%
+    ); // prettier-ignore
+    // color: #000;
+    // prettier-ignore
+    text-shadow:   0px 0px 20px #388fdf44,
+                    0px 0px 16px #388fdf33, 
+                    0px 0px 8px #388fdf22;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  &.orange {
+    background-clip: text;
+  -webkit-background-clip: text;
+    background: linear-gradient(
+      45deg,
+      #f0892a 0%,
+      #ad611b 100%
+    ); // prettier-ignore
+
+    // prettier-ignore
+    text-shadow:   0px 0px 20px #F0892A60,
+                    0px 0px 16px #F0892A40, 
+                    0px 0px 8px #F0892A20;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    animation: gradient-animate 3s linear infinite;
+    color: #0000;
+  }
+  &.inProgress {
+    animation: gradient-animate 3s linear infinite;
+    color: #0000;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+  background-clip: text;
+  -webkit-background-clip: text;
+}

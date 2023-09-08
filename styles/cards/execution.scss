@@ -1,0 +1,153 @@
+$card-container-p: 1rem;
+$step-pl: 2rem;
+$step-p: 1rem;
+// $step-
+
+.card-container.execution .card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.card-container.execution {
+  .step {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    // margin-bottom: 0.75rem;
+    padding-left: $step-pl;
+    padding-top: $step-p;
+    padding-bottom: $step-p;
+
+    &:last-child {
+      margin-bottom: -$card-container-p;
+    }
+    /* padding-bottom: 0.5rem; */
+
+    // border-top: 1px dashed #0003;
+    /* min-height: 52px; */
+    /* padding-left: 24px; */
+  }
+
+  .step-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .step-title {
+    width: 120px;
+  }
+
+  .step-devider {
+    position: absolute;
+    width: calc(100% + $step-pl);
+    height: 1px;
+    background: #0002;
+    top: 0;
+    left: calc(($card-container-p * 3 - $step-pl) * -1);
+  }
+
+  // .step:first-child .step-progress.circle {
+  // // .step:not(:first-child) .step-progress.circle {
+  //   background: red;
+  // }
+}
+
+.connector {
+  content: "";
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.75rem;
+  height: calc(100%);
+  bottom: calc(50%);
+  left: -1rem;
+  transform: translateX(-50%);
+  // background: red;
+  z-index: 0;
+}
+
+.action-progress.circle {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  top: calc(50%);
+  left: 1.5rem;
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 900;
+}
+.step-progress.circle {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  top: calc(50%);
+  left: -1rem;
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 900;
+}
+.step-progress.circle,
+.action-progress.circle,
+.connector {
+  background: rgb(80, 80, 80);
+  box-shadow: 0 0 0.5rem 4px rgba(109, 109, 109, 0.3);
+  &.inProgress,
+  &.Pending {
+    background: rgb(32, 191, 209);
+    box-shadow: 0 0 0.5rem 4px rgba(32, 191, 209, 0.3);
+  }
+  &.Complete {
+    background: rgb(34, 202, 113);
+    box-shadow: 0 0 0.5rem 4px rgba(33, 178, 60, 0.3);
+  }
+  &.CompleteFailed {
+    background: rgb(213, 184, 54);
+    box-shadow: 0 0 0.5rem 4px rgba(213, 184, 54, 0.3);
+  }
+  &.PendingFailed {
+    background: rgb(225, 83, 135);
+    box-shadow: 0 0 0.5rem 4px rgba(225, 83, 135, 0.3);
+  }
+  &.Fail,
+  &.Failed {
+    background: rgb(203, 36, 97);
+    box-shadow: 0 0 0.5rem 4px rgba(203, 36, 97, 0.3);
+  }
+  &.CompleteFail {
+    background: rgb(170, 230, 32);
+    box-shadow: 0 0 0.5rem 4px rgba(203, 200, 36, 0.3);
+  }
+}
+
+/* IN PROGRESS */
+
+.card-devider {
+  position: absolute;
+  width: calc(100% + $step-pl);
+  height: 1px;
+  background: #0002;
+  top: 0;
+  left: calc(($card-container-p * 3 - $step-pl) * -1);
+}

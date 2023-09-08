@@ -1,0 +1,228 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// $$ BASE
+model Account {
+  id String @id @default(uuid())
+  name String? 
+  privateKey String @unique
+  address String @unique 
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  group AccountsGroup? @relation(fields: [groupId], references: [id])
+  // group AccountsGroup[]
+  groupId String?
+  coinBalances CoinBalance[]
+  executions ExecutionAccount[]
+}
+
+model AccountsGroup {
+  id String @id @default(uuid())
+  name String?
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  
+  accounts Account[]
+}
+
+model Provider {
+  id String @id @default(uuid())
+  chain String @unique
+  url String 
+  gasPrice String?
+  gasPercent Int?
+}
+
+model Exchange {
+  id String @id @default(uuid())
+  name String @unique // okx
+  url String? 
+  credentials String @default("{}")
+  // apiKey String?
+  // secretKey String?
+  // passphrase String?
+}
+
+model Contract {
+  id String @id @default(uuid())
+  chain String
+  protocol String
+  name String // Pool have to be stored like POOL:TOKEN0-TOKEN1
+  address String
+
+  @@unique([chain, protocol, name])
+}
+
+model Coin {
+  id String @id @default(uuid())
+  chain String
+  symbol String
+  address String
+  decimals Int
+  balances CoinBalance[] // Update this line
+  
+  @@unique([chain, symbol])
+  @@unique([chain, address])
+}
+
+model CoinBalance {
+  id String @id @default(uuid())
+  balance String @default("0")
+  updatedAt DateTime @updatedAt
+
+  coin Coin @relation(fields: [coinId], references: [id])
+  coinId String
+  account Account @relation(fields: [address], references: [address])
+  address String
+}
+
+// todo transactions
+
+// * Task
+model Task {
+  id String @id @default(uuid())
+  name String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  steps TaskStep[]
+}
+
+model TaskStep {
+  id String @id @default(uuid())
+  task Task @relation(fields: [taskId], references: [id])
+  taskId String
+
+  stepName String
+  stepNumber Int 
+
+  type String
+  chain String?
+  protocol String?
+  exchange String?
+  method String
+
+  args String
+
+  @@unique([taskId, stepNumber])
+}
+
+// $$ Execution
+model Execution {
+  id String @id @default(uuid())
+  name String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  status String @default("Pending") // Pending, inProgress, Completed, Stopped
+
+  steps ExecutionStep[]
+  accounts ExecutionAccount[]
+}
+
+//   * - Execution
+//  / \
+// *   * - ExecutionStep : ExecutionAccount
+//  \ /
+//   * - StepState
+//   * - Action
+model ExecutionStep {
+  id String @id @default(uuid())
+  execution Execution @relation(fields: [executionId], references: [id])
+  executionId String
+
+  stepName String
+  stepNumber Int 
+  
+  type String // Web3, CEX, WAIT
+  method String // 
+  // WEB3
+  chain String?
+  protocol String?
+  // CEX
+  exchange String?
+
+  args String // todo delete
+
+  states StepState[]
+}
+
+
+model ExecutionAccount {
+  id String @id @default(uuid())
+  status String // Completed, inProgress, Pending, Failed, Stoped...
+  currentStep Int @default(0)
+  errorMessage String @default("")
+
+  account Account @relation(fields: [address], references: [address])
+  address String
+
+  execution Execution @relation(fields: [executionId], references: [id])
+  executionId String
+
+  stepsState StepState[]
+
+  @@unique([executionId, address])
+}
+
+
+model StepState {
+  // todo - Move each StepState to 
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  status String // todo check ?
+  args String? // step.args but converted to format that would be used in scripts. It also convert random Values to values that would be used.
+  logs String? // gas, tokenBalances, hashes and other
+
+  accountExecution ExecutionAccount @relation(fields: [accountExecutionId], references: [id])
+  accountExecutionId String
+
+  step ExecutionStep @relation(fields: [stepId], references: [id])
+  stepId String
+
+  previosStepId String?    @unique
+  previosStep   StepState?   @relation("PreviosStep", fields: [previosStepId], references: [id])
+  nextStep StepState?   @relation("PreviosStep") //
+
+  currentAction Int @default(0) // action index that is executed
+  actions StepActionState[]
+}
+
+model StepActionState {
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name String // checkAllowance
+  status String // Success, Fail, inProgress, empty
+  actionNumber Int
+  errorMessage String? // Error message
+  logs String? // gasPrice, txHash, ...
+  // todo - atemps (Every time is created is 1, each time createOrGetAction atemps++)
+
+  stepState StepState @relation(fields: [stepStateId], references: [id])
+  stepStateId String
+
+  previosActionId String?    @unique
+  previosAction   StepActionState?   @relation("PreviosStep", fields: [previosActionId], references: [id])
+  nextAction StepActionState?   @relation("PreviosStep") 
+
+  @@unique([stepStateId, actionNumber]) // have to have only one actionNumber per StepState (step <-> account)
+}
+
+// npx prisma init
+// prisma migrate dev --preview-feature
+// npx prisma studio
+// npm prisma generate -> generate

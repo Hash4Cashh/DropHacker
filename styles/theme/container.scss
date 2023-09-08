@@ -1,0 +1,19 @@
+@mixin set-container-theme($theme, $values) {
+    $background-gradient: map-get($values, "background-color");
+    $font: map-get($values, "font");
+    $modal: map-get($values, "modal");
+    $input: map-get($values, "input");
+
+    $font-color: map-get($map: $font, $key: "color");
+
+    // .container.#{$theme} {
+    // }
+
+    .background.#{$theme} {
+        background: $background-gradient;
+    }
+    .#{$theme} {
+        color: $font-color
+    }
+
+}

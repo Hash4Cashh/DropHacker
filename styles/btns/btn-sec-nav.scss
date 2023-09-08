@@ -1,0 +1,26 @@
+.btn-sec-nav {
+    position: relative;
+    font-weight: 600;
+    padding: 0.25rem 0rem;
+
+    &:hover {
+        color: #000A;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 0.2rem;
+        background: linear-gradient(135deg, #da96e2 0%, #84648e 100%);
+        border-radius: 5rem;
+        top: 100%;
+        left: 0;
+    }
+    &.active {
+        // color: #84648e;
+        // background: #84648e;
+        &::before {
+            width: 100%;
+        }
+    }
+}

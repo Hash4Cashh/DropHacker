@@ -1,0 +1,53 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "./global.css";
+@import "./other/index.scss";
+@import "./btns/index.scss";
+@import "./cards/index.scss";
+@import "./themes.scss";
+@import "./theme/index.scss";
+
+
+@each $theme, $v in $themes {
+  @include set-general-theme($theme, $v);
+  // @include set-cards-theme($theme, $v);
+}
+
+* {
+  transition: all .3s;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+}
+.app {
+  width: 100%;
+  // height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.background {
+    background: linear-gradient(35deg, #111, #333);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.container {
+  display: flex;
+  padding: 96px 44px;
+  // margin-top: 72px;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.container-center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}

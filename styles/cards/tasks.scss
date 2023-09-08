@@ -1,0 +1,90 @@
+$card-container-p: 1rem;
+$step-pl: 2rem;
+$step-pt: .5rem;
+// $step-
+
+
+.card-container.task .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-container.task .header {
+  padding-bottom: 0.5rem;
+  // margin-bottom: 0.5rem;
+}
+
+.card-container.task {
+  .step {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+    padding-left: $step-pl;
+    padding-top: $step-pt;
+    /* padding-bottom: 0.5rem; */
+
+    // border-top: 1px dashed #0003;
+    /* min-height: 52px; */
+    /* padding-left: 24px; */
+  }
+
+  .step-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .step-title {
+    width: 120px;
+  }
+
+  .step-devider {
+    position: absolute;
+    width: calc(100% + $step-pl);
+    height: 1px;
+    background: #0002;
+    top: 0;
+    left: calc(($card-container-p * 3 - $step-pl) * -1)
+  }
+
+  .step-progress.circle {
+    content: "";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: calc(50% + 0.5rem);
+    left: -1rem;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+    background: rgb(80, 80, 80);
+    box-shadow: 0 0 0.5rem 4px rgba(109, 109, 109, 0.3);
+
+    color: #fff;
+    font-weight: 900;
+
+    &.inProgress {
+      background: rgb(209, 150, 32);
+      box-shadow: 0 0 0.5rem 4px rgba(209, 150, 32, 0.3);
+    }
+    &.complete {
+      background: rgb(33, 178, 60);
+      box-shadow: 0 0 0.5rem 4px rgba(33, 178, 60, 0.3);
+    }
+    &.fail {
+      background: rgb(203, 36, 97);
+      box-shadow: 0 0 0.5rem 4px rgba(203, 36, 97, 0.3);
+    }
+  }
+}
+
+/* IN PROGRESS */

@@ -1,0 +1,33 @@
+@mixin set-gradient-transparent($theme, $values) {
+
+  $gradient-colors: map-get(
+    $map: $values,
+    $key: "gradient-transparent",
+  );
+  $gradient-colors-horizontal: map-get(
+    $map: $values,
+    $key: "gradient-transparent-horizontal",
+  );
+
+  @each $key, $color in $gradient-colors-horizontal {
+    .#{$theme} {
+      .gradient-transparent-horizontal {
+        background: if($key == "default", $color, null);
+        &.#{$key} {
+          background: $color;
+        }
+      }
+    }
+  }
+
+  @each $key, $color in $gradient-colors {
+    .#{$theme} {
+      .gradient-transparent {
+        background: if($key == "default", $color, null);
+        &.#{$key} {
+          background: $color;
+        }
+      }
+    }
+  }
+}

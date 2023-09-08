@@ -1,0 +1,20 @@
+.gradient-text {
+//   position: absolute;
+  top: -5px;
+  left: 10px;
+//   padding: 0.5rem 1rem;
+  font-weight: 900;
+  font-size: 72px;
+//   line-height: 1;
+  background: -webkit-linear-gradient(135deg, #d26ed6 0%, #59a1dc 75%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #fff0;
+  display: block;
+  transition: color 0.4s;
+  animation: gradient-animate 3s linear infinite;
+}
+
+// .gradient-text:hover {
+//     color: #0000;
+// }

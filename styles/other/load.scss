@@ -1,0 +1,128 @@
+.my-loader {
+  /* width: 150px; */
+  /* height: 150px; */
+  border-radius: 50%;
+  /* margin: 3em; */
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+.my-loader,
+.my-loader:before,
+.my-loader:after {
+  animation: 1s infinite ease-in-out;
+}
+.my-loader:before,
+.my-loader:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.my-loader-black {
+  &.my-loader-7,
+  &.my-loader-8 {
+    &::after,
+    &::before {
+      background-color: #d7a6e1;
+    }
+  }
+}
+.my-loader-white {
+  &.my-loader-7,
+  &.my-loader-8 {
+    &::after,
+    &::before {
+      background-color: #fff;
+    }
+  }
+}
+
+
+
+.my-loader-3:before {
+  content: "";
+  border: 10px solid white;
+  top: -10px;
+  left: -10px;
+  animation-name: my-loader3;
+}
+
+@keyframes my-loader3 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.my-loader-7 {
+  animation: my-loader7-1 1s infinite linear;
+}
+
+.my-loader-7:before,
+.my-loader-7:after {
+  content: "";
+  width: 80%;
+  height: 80%;
+  background-color: #fff;
+  top: 5%;
+}
+
+.my-loader-7:before {
+  left: -5%;
+  animation: my-loader7-2 1s infinite alternate ease-in-out;
+  transform-origin: 10% 50%;
+}
+.my-loader-7:after {
+  left: auto;
+  right: -5%;
+  animation: my-loader7-2 1s 1s infinite alternate ease-in-out;
+  transform: scale(0);
+  transform-origin: 90% 50%;
+}
+
+@keyframes my-loader7-1 {
+  0% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(380deg);
+  }
+}
+
+@keyframes my-loader7-2 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.my-loader-8:before,
+.my-loader-8:after {
+  content: "";
+  background-color: #fff;
+  transform: scale(0);
+  animation: my-loader8 1.5s infinite ease-in-out;
+}
+.my-loader-8:after {
+  animation-delay: 0.75s;
+}
+
+@keyframes my-loader8 {
+  0% {
+    transform: translateX(-100%) scale(0);
+  }
+  50% {
+    transform: translateX(0%) scale(1);
+  }
+  100% {
+    transform: translateX(100%) scale(0);
+  }
+}

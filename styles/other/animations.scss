@@ -1,0 +1,8 @@
+@keyframes gradient-animate {
+  0%, 100% {
+    filter: hue-rotate(-45deg);
+  }
+  50% {
+    filter: hue-rotate(45deg);
+  }
+}

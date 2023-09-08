@@ -1,0 +1,89 @@
+$themes: (
+  dark: (
+    // ``BG
+    background-color:
+      radial-gradient(98.47% 98.47% at 99.11% 1.53%, #232275 0%, #070917 100%),
+    border-color: #fff1,
+    // ``Modal
+    modal:
+      (
+        background: #0003,
+        background-content: #0002,
+      ),
+
+    // ``Input
+    input:
+      (
+        background: #0009,
+        background-disabled: #0009,
+      ),
+
+    // ``Font
+    font:
+      (
+        primary: #fff,
+        inactive: #fffa,
+        placeholder: #fff5,
+      ),
+    // ``CARD
+    card:
+      (
+      border-margin-left: -2.5px,
+        content-blur: 24px,
+        content-bg: #0005,
+      ),
+
+    plain: (
+      "purple": purple,
+      "blue": blue,
+      "cyan": cyan,
+      "green": green,
+      "yellow": yellow,
+      "orange": orange,
+      "red": red,
+      "white": white,
+      "black": black,
+    ),
+
+    gradient: (
+      "purple": purple,
+      "blue": blue,
+      "cyan": cyan,
+      "green": green,
+      "yellow": yellow,
+      "orange": orange,
+      "red": red,
+      "white": white,
+      "black": black,
+      "default": white,
+      "inactive": black,
+    ),
+
+    gradient-transparent: (
+      "purple": linear-gradient(90deg, #5C10FD 0%, rgba(92, 16, 253, 0.16) 20%, rgba(92, 16, 253, 0) 100%),
+      "blue": linear-gradient(90deg, #2F63E9 0%, rgba(47, 99, 233, 0.385417) 20%, rgba(47, 99, 233, 0) 100%),
+      "cyan": linear-gradient(90deg, #2AF0CC 0%, rgba(42, 109, 240, 0.385417) 20%, rgba(42, 109, 240, 0) 100%),
+      "green":linear-gradient(90deg,#10ff9b 0%,rgba(16, 255, 155, 0.3) 16.15%,rgba(16, 255, 155, 0) 100%),
+      "yellow": linear-gradient(90deg, #ECF02A 0%, rgba(236, 240, 42, 0.16) 20%, rgba(236, 240, 42, 0) 100%),
+      "orange": linear-gradient(90deg, #F0892A 0%, rgba(240, 137, 42, 0.16) 20%, rgba(240, 137, 42, 0) 100%),
+      "red": linear-gradient(90deg, #DF2A6B 0%, rgba(223, 42, 107, 0.16) 20%, rgba(223, 42, 107, 0) 100%),
+      "white": linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.16) 20%, rgba(255, 255, 255, 0) 100%),
+      "black": linear-gradient(90deg, #3A3A3A 0%, rgba(88, 88, 88, 0.16) 20%, rgba(88, 88, 88, 0) 100%),
+      "default": linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.15) 15%, rgba(255, 255, 255, 0.10) 20%, rgba(255, 255, 255, 0) 100%),
+      "inactive": linear-gradient(90deg, #3A3A3A 0%, rgba(88, 88, 88, 0.16) 20%, rgba(88, 88, 88, 0) 100%),
+    ),
+    gradient-transparent-horizontal: (
+      "purple": linear-gradient(0deg, #5C10FD 0%, rgba(92, 16, 253, 0) 100%),
+      "blue": linear-gradient(0deg, #2F63E9 0%, rgba(47, 99, 233, 0) 100%),
+      "cyan": linear-gradient(0deg, #2AF0CC 0%, rgba(42, 109, 240, 0) 100%),
+      "green": linear-gradient(0deg,#10ff9b 0%, rgba(16, 255, 155, 0) 100%),
+      "yellow": linear-gradient(0deg, #ECF02A 0%, rgba(236, 240, 42, 0.2) 100%),
+      "orange": linear-gradient(0deg, #F0892A 0%, rgba(240, 137, 42, 0) 100%),
+      "red": linear-gradient(0deg, #DF2A6B 0%, rgba(223, 42, 107, 0) 100%),
+      "white": linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%),
+      "black": linear-gradient(0deg, #3A3A3A 0%, rgba(88, 88, 88, 0) 100%),
+      "default": linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%),
+      "inactive": linear-gradient(0deg, #3A3A3A 0%, rgba(88, 88, 88, 0) 100%),
+    ),
+  ),
+);
