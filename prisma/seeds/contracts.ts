@@ -1,4 +1,4 @@
-import { IContract } from "../../types";
+import { IContract } from "@types";
 import { EChains, EProtocols, EProtocolNames } from "../../types/enum";
 
 export const contractsSeed: Array<IContract> = [

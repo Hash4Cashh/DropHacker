@@ -7,9 +7,9 @@ interface IProps {
     color?: EColors | string;
 
 }
-export default function Spinner({ size = "16px", color="#0001", fill="#FFF9"}) {
+export default function Spinner({ size = "16px", color="#0001", fill="#FFF9", divStyle = {}, svgStyle = {}}) {
   return (
-    <div role="status">
+    <div role="status" style={divStyle}>
       <svg
         aria-hidden="true"
         className={`mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600`}
@@ -18,6 +18,7 @@ export default function Spinner({ size = "16px", color="#0001", fill="#FFF9"}) {
             height: size,
             fill,
             color,
+            ...svgStyle
         }}
         viewBox="0 0 100 101"
         fill="none"

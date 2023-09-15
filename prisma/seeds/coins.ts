@@ -1,6 +1,7 @@
-import { ICoin } from "../../types";
+import { ICoin } from "@types";
 import { EChains } from "../../types/enum";
 import { constants } from "ethers";
+import { Coin } from "@prisma/client";
 
 export const coinsSeed: Array<ICoin> = [
     // Mainnet - ETH

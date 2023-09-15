@@ -77,10 +77,10 @@ async function main() {
 
   for (const ex of exchangesSeed) {
     await prisma.exchange.create({
-      data: {
-        ...ex,
-        credentials: JSON.stringify(ex.credentials)
-      },
+      data: { 
+        ...ex, 
+        credentials: JSON.stringify(ex.credentials) 
+    },
     });
   }
   console.log(`🟢 Create Exchanges ${exchangesSeed.length}`);

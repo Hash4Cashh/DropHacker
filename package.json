@@ -1,5 +1,5 @@
 {
-  "name": "drophacker",
+  "name": "learning",
   "version": "0.1.0",
   "private": true,
   "prisma": {
@@ -16,7 +16,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@prisma/client": "^5.2.0",
+    "@prisma/client": "^4.15.0",
     "@typechain/ethers-v5": "^11.0.0",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
@@ -49,6 +49,7 @@
   "devDependencies": {
     "@types/crypto-js": "^4.1.1",
     "@types/lodash": "^4.14.195",
-    "prisma": "^4.15.0"
+    "prisma": "^4.15.0",
+    "ts-node": "^10.9.1"
   }
 }

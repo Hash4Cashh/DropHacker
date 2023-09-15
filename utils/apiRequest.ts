@@ -5,7 +5,8 @@ dotenv.config()
 async function handleError(res: Response) {
   if (!res.ok) {
     console.log("Error making API request \n", res.statusText);
-    throw new Error(`${res.statusText}`);
+    alert(res.statusText);
+    // throw new Error(`${res.statusText}`);
   }
 }
 

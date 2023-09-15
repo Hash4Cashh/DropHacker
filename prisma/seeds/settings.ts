@@ -1,4 +1,4 @@
-import { IExchange, IProvider } from "../../types";
+import { IExchange, IProvider } from "@types";
 import { EChains, EExchanges } from "../../types/enum";
 
 export const providersSeed: Array<IProvider> = [
